@@ -56,7 +56,6 @@ export const GridBox = ({ depth, canvasProps }: GridBoxProps) => {
       ref={canvasRef}
       style={{
         transform: `translateZ(${depth || 0}px)`,
-        overflow: 'hidden',
       }}
       width={100}
       height={100}
