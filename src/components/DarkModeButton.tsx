@@ -29,7 +29,10 @@ export const DarkModeButton = () => {
   }, []);
 
   return (
-    <button className="bg-transparent text-black dark:text-slate-400" onClick={toggleDarkMode}>
+    <button
+      className="bg-transparent text-black dark:text-slate-400 rounded-full flex justify-center items-center p-1"
+      onClick={toggleDarkMode}
+    >
       {isDarkMode ? <Moon /> : <Sun />}
     </button>
   );

@@ -12,7 +12,7 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="dark">
+    <html lang="ko" className="dark">
       <Head>
         <title>Rud</title>
         <meta name="og:title" content="width=device-width, initial-scale=1" />

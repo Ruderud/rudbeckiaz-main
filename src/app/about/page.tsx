@@ -4,7 +4,7 @@ import { SkillChip } from './components';
 export default function AboutPage() {
   return (
     <main className="px-4 sm:px-8 md:px-20 lg:px-32 xl:px-40 py-20">
-      <p className="text-sm text-black dark:text-slate-300">Latest Update: 2023. 6. 8.</p>
+      <p className="text-sm text-black dark:text-slate-300">Latest Update: 2023. 6. 12.</p>
 
       <section className="border-b-[2px] py-10">
         <header className="pb-10">
@@ -13,7 +13,7 @@ export default function AboutPage() {
         </header>
 
         <article className="leading-6 pb-10">
-          {/* <p>아름다운 세상을 위해 노력하는 개발자 정경훈입니다.</p> */}
+          {/* <p>아름다운 세상을 위해 노력하는 개발자 정경훈입니다.</p> */}릴ㄹ
           <p>좋은 소프트웨어 엔지니어를 지향하는 개발자 정경훈입니다.</p>
           <p>
             지향하는 바를 달성하기 위해서 기초가 되는 Computer Science지식을 꾸준히 학습하고 좋은 코드 디자인에 대해
