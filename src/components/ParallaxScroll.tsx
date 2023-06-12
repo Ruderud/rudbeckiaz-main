@@ -6,9 +6,7 @@ import { GridBox } from './GridBox';
 export const ParallaxScroll = () => {
   const scrollLayerRef = useRef<HTMLDivElement>(null);
   const [depth, setDepth] = useState<number>(0);
-  const maxDepth = useMemo(() => {
-    return scrollLayerRef?.current?.getBoundingClientRect().height || window.innerHeight;
-  }, []);
+  const [maxDepth, setMaxDepth] = useState<number>(0);
 
   useEffect(() => {
     const htmlElement = document.querySelector('html');
@@ -16,8 +14,9 @@ export const ParallaxScroll = () => {
   }, []);
 
   useEffect(() => {
-    console.log('depth', maxDepth);
-  }, [maxDepth]);
+    if (!scrollLayerRef.current) return;
+    setMaxDepth(scrollLayerRef.current.getBoundingClientRect().height);
+  }, []);
 
   return (
     <div className="max-h-[94vh]">
