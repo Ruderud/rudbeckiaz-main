@@ -1,8 +1,9 @@
 import Link from 'next/link';
+import { SkillChip } from './components';
 
 export default function AboutPage() {
   return (
-    <main className="px-40 pt-20">
+    <main className="px-4 sm:px-8 md:px-20 lg:px-32 xl:px-40 py-20">
       <p className="text-sm text-black dark:text-slate-300">Latest Update: 2023. 6. 8.</p>
 
       <section className="border-b-[2px] py-10">
@@ -12,6 +13,7 @@ export default function AboutPage() {
         </header>
 
         <article className="leading-6 pb-10">
+          {/* <p>아름다운 세상을 위해 노력하는 개발자 정경훈입니다.</p> */}
           <p>좋은 소프트웨어 엔지니어를 지향하는 개발자 정경훈입니다.</p>
           <p>
             지향하는 바를 달성하기 위해서 기초가 되는 Computer Science지식을 꾸준히 학습하고 좋은 코드 디자인에 대해
@@ -38,14 +40,14 @@ export default function AboutPage() {
 
       <section className="border-b-[2px] py-10">
         <header className="pb-10">
-          <p className="text-2xl font-bold">Work Experience</p>
+          <p className="text-2xl font-bold">🏢 Work Experience</p>
         </header>
 
-        <article className="pb-10">
-          <p className="text-xl font-bold">🏢 Three ducks</p>
-          <p className="text-sm text-black dark:text-slate-300 pb-5">2023. 1. - 2023. 5. | Web Engineer (Intern)</p>
+        <article className="pb-10 pl-6">
+          <p className="text-xl font-bold">Three ducks</p>
+          <p className="text-sm text-black dark:text-slate-300 pb-10">2023. 1. - 2023. 5. | Web Engineer (Intern)</p>
 
-          <div className="pl-6 pb-5">
+          <div className="pl-6 pb-10">
             <p className="text-lg font-bold">Stari Web</p>
             <p className="text-md">
               <Link className="text-blue-400 font-bold" href="https://stari.io" target="_blank">
@@ -56,13 +58,31 @@ export default function AboutPage() {
             <p className="text-md">
               신규 스타 등록 및 고객의 영상 구입, 신규 기능 추가, 유지보수등의 운영업무 전반을 담당했습니다.
             </p>
-            <p className="text-md"></p>
+            <div className="text-sm flex gap-2 pt-2">
+              <SkillChip name="Shopify" />
+              <SkillChip name="Liquid" />
+              <SkillChip name="JavaScript" />
+              <SkillChip name="AWS Lambda" />
+              <SkillChip name="AWS S3" />
+            </div>
 
-            <ul className="pl-6 pt-5 list-disc flex flex-col gap-y-4 ">
-              <li>Lagacy Order API Migration: </li>
-              <li>신규 프로모션 릴리즈</li>
-              <li>비디오 UI 리뉴얼 릴리즈</li>
-              <li>주문 페이지 리뉴얼 릴리즈</li>
+            <ul className="pl-4 pt-5 list-disc flex flex-col gap-y-4 ">
+              <li>
+                <strong>Lagacy Order API Migration: </strong>
+                기존의 사용중인 주문 관리 API가 deprecated됨에 따라 최신 API로 교체 작업 진행.
+              </li>
+              <li>
+                <strong>신규 프로모션 릴리즈: </strong> 뽀로로 프로모션 시작에 따라 디자이너와 협업하여 베너, 주문페이지
+                등 프로모션 관련 컴포넌트 구현.
+              </li>
+              <li>
+                <strong>비디오 뷰 페이지 리뉴얼 릴리즈: </strong>다양한 사이즈의 Video의 가시성 향상을 위해 반응형
+                컴포넌트로 작성.
+              </li>
+              <li>
+                <strong>주문 페이지 리뉴얼 릴리즈: </strong> 주문 튜토리얼 및 프로세스 관련 전달사항들 리뉴얼. 주문 폼
+                페이지 UI 개선.
+              </li>
             </ul>
           </div>
 
@@ -72,13 +92,68 @@ export default function AboutPage() {
               Stari에서의 스타 신규 계약 및 관리, 고객 주문사항 관리, 정산 관련 내용을 다루는 관리자 웹
               어플리케이션입니다.
             </p>
+            <div className="text-sm flex gap-2 pt-2">
+              <SkillChip name="React" />
+              <SkillChip name="TypeScript" />
+              <SkillChip name="Redux Tool Kit" />
+              <SkillChip name="AWS Lambda" />
+              <SkillChip name="AWS DynamoDB" />
+            </div>
 
-            <ul className="pl-6 pt-5 list-disc flex flex-col gap-y-4">
-              <li>신규 스타 가입 폼 리뉴얼 릴리즈</li>
-              <li>JS to TS Migration</li>
-              <li>주문 내역 검색기능 릴리즈</li>
-              <li>i18n 릴리즈</li>
+            <ul className="pl-4 pt-5 list-disc flex flex-col gap-y-4">
+              <li>
+                <strong>신규 스타 가입 폼 리뉴얼 릴리즈: </strong>
+                기존의 스타 가입 폼이 복잡하고 불편하다는 피드백을 받아 리뉴얼. 정보 관심사에 따라 view를 분리하여
+                각각의 입력사항에 집중 할 수 있는 Form Wizard UI로 개선.
+              </li>
+              <li>
+                <strong>JS to TS Migration: </strong>
+                기존의 JS 코드를 TS로 마이그레이션 작업 진행. 기존의 JS 코드에 대한 타입 정의 및 타입 에러 수정. TS
+                코드에서 Any Type을 최대한 제거하고, Strict 모드를 적용하여 타입 안정성 향상. 관심사에 따라 type을
+                분리하여 재사용성 향상.
+              </li>
+              <li>
+                <strong>주문 내역 검색기능 릴리즈: </strong>
+                DynamoDB Expression를 이용하여 고객 주문 내역에 대한 Compound Filter 기능 구현. Index를 사용하여
+                Optimizing.
+              </li>
+              <li>
+                <strong>i18n 릴리즈: </strong>
+                React-i18next 라이브러리를 이용하여 다국어 지원 기능 구현. JSON Nested Key 타입을 선언하여 사용하도록
+                적용하여 타입 안정성 향상.
+              </li>
             </ul>
+          </div>
+        </article>
+      </section>
+
+      <section className="border-b-[2px] py-10">
+        <header className="pb-10">
+          <p className="text-2xl font-bold">🛠️ Skills</p>
+        </header>
+
+        <div className="pl-6 text-sm flex gap-2">
+          <SkillChip name="HTML/CSS" />
+          <SkillChip name="React" />
+          <SkillChip name="TypeScript" />
+          <SkillChip name="NodeJS" />
+        </div>
+      </section>
+
+      <section className="border-b-[2px] py-10">
+        <header className="pb-10">
+          <p className="text-2xl font-bold">🎓 Education</p>
+        </header>
+
+        <article className="pl-6">
+          <div>
+            <p className="text-xl font-bold">엘리스 SW 엔지니어 트랙 1기</p>
+            <p className="text-sm text-black dark:text-slate-300 pb-5">2021. 10. 26. - 2022. 2. 25.</p>
+          </div>
+
+          <div>
+            <p className="text-xl font-bold">상명대학교 화공신소재학과</p>
+            <p className="text-sm text-black dark:text-slate-300 pb-5">2013. 3. - 2020. 2.</p>
           </div>
         </article>
       </section>
