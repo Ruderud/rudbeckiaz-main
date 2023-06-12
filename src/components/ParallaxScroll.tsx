@@ -1,19 +1,23 @@
 'use client';
 
-import { use, useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { GridBox } from './GridBox';
 
 export const ParallaxScroll = () => {
   const scrollLayerRef = useRef<HTMLDivElement>(null);
   const [depth, setDepth] = useState<number>(0);
   const maxDepth = useMemo(() => {
-    return scrollLayerRef?.current?.getBoundingClientRect().height || window.innerHeight;
+    return scrollLayerRef?.current?.getBoundingClientRect().height || globalThis.innerHeight;
   }, []);
 
   useEffect(() => {
     const htmlElement = document.querySelector('html');
     htmlElement?.style.setProperty('overflow', 'hidden');
   }, []);
+
+  useEffect(() => {
+    console.log('depth', maxDepth);
+  }, [maxDepth]);
 
   return (
     <div className="max-h-[94vh]">
