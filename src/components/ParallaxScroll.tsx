@@ -7,7 +7,7 @@ export const ParallaxScroll = () => {
   const scrollLayerRef = useRef<HTMLDivElement>(null);
   const [depth, setDepth] = useState<number>(0);
   const maxDepth = useMemo(() => {
-    return scrollLayerRef?.current?.getBoundingClientRect().height || globalThis.innerHeight;
+    return scrollLayerRef?.current?.getBoundingClientRect().height || window.innerHeight;
   }, []);
 
   useEffect(() => {
