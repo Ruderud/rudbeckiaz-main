@@ -31,10 +31,10 @@ export const AxisTunnel = () => {
   };
 
   return (
-    <>
+    <div className="relative">
       <AxisScrollDebugTool maxDepth={maxDepth} depth={depth} />
       <AxisScroll onScroll={setCurrentDepth} onClick={excuteViewLayerClickEventByPosition} setMaxDepth={setMaxDepth} />
       <AxisView maxDepth={maxDepth} depth={depth} />
-    </>
+    </div>
   );
 };

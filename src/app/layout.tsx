@@ -17,7 +17,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <title>Rud</title>
         <meta name="og:title" content="width=device-width, initial-scale=1" />
       </Head>
-      <body className={`${inter.className} min-h-screen bg-white dark:bg-slate-800 text-black dark:text-white`}>
+      <body className={`${inter.className} bg-white dark:bg-slate-800 text-black dark:text-white`}>
         <TopBar />
         {children}
       </body>

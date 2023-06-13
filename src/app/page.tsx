@@ -2,7 +2,7 @@ import { AxisTunnel } from '@/components';
 
 export default function Home() {
   return (
-    <main className="relative">
+    <main>
       <AxisTunnel />
     </main>
   );
