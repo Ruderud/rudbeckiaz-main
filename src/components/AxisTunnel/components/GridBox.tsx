@@ -51,15 +51,5 @@ export const GridBox = ({ depth, canvasProps }: GridBoxProps) => {
     }
   }, []);
 
-  return (
-    <canvas
-      ref={canvasRef}
-      style={{
-        transform: `translateZ(${depth || 0}px)`,
-      }}
-      width={100}
-      height={100}
-      //   {...canvasProps}
-    />
-  );
+  return <canvas ref={canvasRef} width={100} height={100} {...canvasProps} />;
 };

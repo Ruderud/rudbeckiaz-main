@@ -1,9 +1,9 @@
-import { ParallaxScroll } from '@/components';
+import { AxisTunnel } from '@/components';
 
 export default function Home() {
   return (
     <main className="relative">
-      <ParallaxScroll />
+      <AxisTunnel />
     </main>
   );
 }
