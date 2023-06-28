@@ -3,7 +3,7 @@ import { SkillChip } from './components';
 
 export default function AboutPage() {
   return (
-    <main className="px-4 sm:px-8 md:px-20 lg:px-32 xl:px-40 py-20">
+    <main className="px-4 sm:px-8 md:px-20 lg:px-32 xl:px-40 py-10">
       <p className="text-sm text-black dark:text-slate-300">Latest Update: 2023. 6. 12.</p>
 
       <section className="border-b-[2px] py-10">
@@ -42,11 +42,11 @@ export default function AboutPage() {
           <p className="text-2xl font-bold">🏢 Work Experience</p>
         </header>
 
-        <article className="pb-10 pl-6">
+        <article className="pb-10 pl-6 max-[400px]:pl-0">
           <p className="text-xl font-bold">Three ducks</p>
           <p className="text-sm text-black dark:text-slate-300 pb-10">2023. 1. - 2023. 5. | Web Engineer (Intern)</p>
 
-          <div className="pl-6 pb-10">
+          <div className="pl-6 max-[400px]:pl-0 pb-10">
             <p className="text-lg font-bold">Stari Web</p>
             <p className="text-md">
               <Link className="text-blue-400 font-bold" href="https://stari.io" target="_blank">
@@ -57,7 +57,7 @@ export default function AboutPage() {
             <p className="text-md">
               신규 스타 등록 및 고객의 영상 구입, 신규 기능 추가, 유지보수등의 운영업무 전반을 담당했습니다.
             </p>
-            <div className="text-sm flex gap-2 pt-2">
+            <div className="text-sm max-[400px]:text-xs flex gap-2 pt-2 max-[400px]:max-w-[100vw] max-[400px]:overflow-scroll scrollbar-hide">
               <SkillChip name="Shopify" />
               <SkillChip name="Liquid" />
               <SkillChip name="JavaScript" />
@@ -85,13 +85,13 @@ export default function AboutPage() {
             </ul>
           </div>
 
-          <div className="pl-6">
+          <div className="pl-6 max-[400px]:pl-0">
             <p className="text-lg font-bold">Stari Admin Tool</p>
             <p className="text-md">
               Stari에서의 스타 신규 계약 및 관리, 고객 주문사항 관리, 정산 관련 내용을 다루는 관리자 웹
               어플리케이션입니다.
             </p>
-            <div className="text-sm flex gap-2 pt-2">
+            <div className="text-sm max-[400px]:text-xs flex gap-2 pt-2 max-[400px]:max-w-[100vw] max-[400px]:overflow-scroll scrollbar-hide">
               <SkillChip name="React" />
               <SkillChip name="TypeScript" />
               <SkillChip name="Redux Tool Kit" />
