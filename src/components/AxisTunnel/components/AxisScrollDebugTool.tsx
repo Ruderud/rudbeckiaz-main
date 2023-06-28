@@ -65,7 +65,7 @@ export const AxisScrollDebugTool = ({ maxDepth, depth }: AxisScrollDebugToolProp
   }, [maxDepth, depth, clearDot]);
 
   return (
-    <div className="absolute bg-white text-black p-2">
+    <div className="absolute z-10 bg-white text-black p-2">
       <div className="flex gap-4 p-2">
         <div>perspective: {maxDepth}px</div>
         <div>current Depth: {depth}px</div>

@@ -4,10 +4,11 @@ import { DetailedHTMLProps, HTMLAttributes, useEffect, useRef } from 'react';
 
 interface AxisScrollProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
   setMaxDepth: (maxDepth: number) => void;
+  sectionCount: number;
 }
 
 export const AxisScroll = (props: AxisScrollProps) => {
-  const { setMaxDepth, ...divProps } = props;
+  const { setMaxDepth, sectionCount, ...divProps } = props;
   const scrollLayerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -19,17 +20,12 @@ export const AxisScroll = (props: AxisScrollProps) => {
     <div
       ref={scrollLayerRef}
       id="scroll-layer"
-      className="relative h-[94vh] overflow-scroll snap-y snap-mandatory" //scrollbar-hide
+      className="relative h-screen overflow-scroll snap-y snap-mandatory" //scrollbar-hide
       {...divProps}
     >
-      <div className="h-[94vh] bg-blue-100 opacity-20 overflow-hidden snap-start snap-always" />
-      <div className="h-[94vh] bg-blue-200 opacity-20 overflow-hidden snap-start snap-always" />
-      <div className="h-[94vh] bg-blue-300 opacity-20 overflow-hidden snap-start snap-always" />
-      <div className="h-[94vh] bg-blue-400 opacity-20 overflow-hidden snap-start snap-always" />
-      <div className="h-[94vh] bg-blue-500 opacity-20 overflow-hidden snap-start snap-always" />
-      <div className="h-[94vh] bg-blue-600 opacity-20 overflow-hidden snap-start snap-always" />
-      <div className="h-[94vh] bg-blue-700 opacity-20 overflow-hidden snap-start snap-always" />
-      <div className="h-[94vh] bg-blue-800 opacity-20 overflow-hidden snap-start snap-always" />
+      {Array.from({ length: sectionCount + 1 }, (_, index) => {
+        return <div className="h-screen bg-blue-100 opacity-20 overflow-hidden snap-start snap-always" key={index} />;
+      })}
     </div>
   );
 };

@@ -3,6 +3,8 @@
 import { MouseEventHandler, UIEventHandler, useEffect, useState } from 'react';
 import { AxisScroll, AxisScrollDebugTool, AxisView } from './components';
 
+const SECTION_COUNT = 7;
+
 export const AxisTunnel = () => {
   const [depth, setDepth] = useState<number>(0);
   const [maxDepth, setMaxDepth] = useState<number>(0);
@@ -11,6 +13,9 @@ export const AxisTunnel = () => {
     // chrome react devTool => canvas element로 인한 html의 스크롤을 막음
     const htmlElement = document.querySelector('html');
     htmlElement?.style.setProperty('overflow', 'hidden');
+    return () => {
+      htmlElement?.style.setProperty('overflow', 'unset');
+    };
   }, []);
 
   const setCurrentDepth: UIEventHandler<HTMLDivElement> = (event) => {
@@ -33,7 +38,12 @@ export const AxisTunnel = () => {
   return (
     <div className="relative">
       <AxisScrollDebugTool maxDepth={maxDepth} depth={depth} />
-      <AxisScroll onScroll={setCurrentDepth} onClick={excuteViewLayerClickEventByPosition} setMaxDepth={setMaxDepth} />
+      <AxisScroll
+        onScroll={setCurrentDepth}
+        onClick={excuteViewLayerClickEventByPosition}
+        setMaxDepth={setMaxDepth}
+        sectionCount={SECTION_COUNT}
+      />
       <AxisView maxDepth={maxDepth} depth={depth} />
     </div>
   );
