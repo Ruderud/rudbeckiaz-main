@@ -26,5 +26,6 @@
   "devDependencies": {
     "@cloudflare/next-on-pages": "^1.0.2",
     "@svgr/webpack": "^8.0.1"
-  }
+  },
+  "packageManager": "yarn@3.6.1"
 }
