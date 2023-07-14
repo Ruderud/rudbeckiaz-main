@@ -1,6 +1,5 @@
 'use client';
 
-import Link from 'next/link';
 import { GridBox } from './GridBox';
 
 interface AxisViewProps {
@@ -15,51 +14,50 @@ export const AxisView = ({ maxDepth, depth }: AxisViewProps) => {
       className="relative top-[-94vh] w-screen h-[94vh] z-[-10] flex justify-center items-center"
       style={{
         perspective: `${maxDepth}px`,
+        perspectiveOrigin: '50% 35%',
         transformStyle: 'preserve-3d',
       }}
     >
       <GridBox
         canvasProps={{
+          width: 300,
+          height: 300,
           style: {
             position: 'absolute',
-            transform: `translate3d(0,0,${depth + 2000}px)`,
+            transform: `translate3d(-150px,0px,${depth + 2000}px) rotatez(0deg) rotateY(90deg) translateY(-100px)`,
           },
         }}
       />
       <GridBox
         canvasProps={{
-          width: 1500,
+          width: 300,
+          height: 300,
           style: {
             position: 'absolute',
-            transform: `translate3d(150px,100px,${depth + 4000}px) rotatez(25deg) rotateY(70deg)`,
+            transform: `translate3d(150px,0px,${depth + 2000}px) rotatez(0deg) rotateY(-90deg) translateY(-100px)`,
           },
         }}
       />
       <GridBox
         canvasProps={{
+          width: 300,
+          height: 300,
           style: {
             position: 'absolute',
-            transform: `translate3d(100px,-100px,${depth + 6000}px)`,
+            transform: `translate3d(0px,0px,${depth + 1850}px) rotatez(0deg) rotateY(0deg) translateY(-100px)`,
           },
         }}
       />
       <GridBox
         canvasProps={{
+          width: 300,
+          height: 300,
           style: {
             position: 'absolute',
-            transform: `translate3d(-100px,-100px,${depth + 7000}px)`,
+            transform: `translate3d(0px,50px,${depth + 2000}px) rotateX(90deg) rotateY(0deg) translateY(-100px)`,
           },
         }}
       />
-      <Link
-        href="/about"
-        style={{
-          position: 'absolute',
-          transform: `translate3d(0,0,${depth + 100}px)`,
-        }}
-      >
-        About
-      </Link>
     </div>
   );
 };
